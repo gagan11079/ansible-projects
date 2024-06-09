@@ -1,0 +1,24 @@
+---
+- name: To create file and directory in local repo
+  hosts:13.201.36.96
+  become: true
+  gather_facts: false 
+  remote_user: root
+  tasks:
+  - name: To create file and directory
+    file: 
+      name: gagan.txt
+      state: touch
+      owner: ec2-user
+      group: ec2-user
+      mode: '0644'
+      path: /home/ec2-user/
+  - name: To create director
+    file:
+      name: Pralu
+      state: directory
+      owner: ec2-user
+      group: ec2-user
+      mode: '0755'
+      path: /home/ec2-user
+... 
